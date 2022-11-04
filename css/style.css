@@ -1,0 +1,213 @@
+html {
+    box-sizing: border-box;
+  }
+  *, 
+  *:before, 
+  *:after {
+    box-sizing: inherit;
+  }
+   
+  body {
+    font-family: 'Raleway', sans-serif;
+    
+  }
+  /*Utilidades*/
+  .container {
+    width: 80%;
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5em;
+    margin: 0 0.1em;
+    border-radius: 0.5em;
+}
+.btn-primary {
+  color: white;
+  background-color: #0F2620;
+}
+
+.btn-secondary {
+  color: white;
+  background-color: #7BA69A;
+}
+
+.btn-danger {
+  color: white;
+  background-color: #A6444C;
+}
+
+.btn-light {
+  color: black;
+  background-color: #DDF2CE;
+}
+
+.btn-dark {
+  color: white;
+  background-color: #594A39;
+}
+  /* Header */
+  .bg-header {
+    background-image: url('../assets/images/bg-header.jpg');
+    background-repeat: no-repeat;/*imagenes pequeñas se repiten*/
+    background-position: center;
+    background-size: cover;/*imagen RESPONSIVE*/
+    height: 18.75em;
+
+  }
+
+  .bg-navbar {/*TRANSPARENCIA puntero en rgba y TABLA de COLORES*/
+    background-color: rgba(0, 0, 0, 0.61);
+    padding: 1.5em 0;/*MARGENES*/
+  }
+  .navbar {
+    display: flex;/*usamos FlexBox*/
+    flex-direction: column;/*items en COLUMHA*/
+    align-items: center;/*CENTRADO de items*/
+  }
+   @media (min-width: 768px) {
+    .navbar {
+      flex-direction: row;/* a mas de 768 brandYmenú alineados */
+      justify-content: space-between;/* brandYmenú ESPACIADOS */
+    }
+   }
+  .navbar-brand {
+    display: flex;
+    flex-direction: column;/*items en COLUMNA*/
+    align-items: center;/*CENTRADO de items*/
+    color: white;/*la marca: COLOR*/
+    font-size: 2rem;/*tamaño de la MARCA*/
+    text-decoration: none;/*quita el SUBRAYADO de la marca*/
+    font-weight: 500;/*Para ENGROSAR la marca*/
+    margin-bottom: 1em;/*SEPARA la marca del menú*/
+/*1em = 2rem = 32pixeles, font-size ligado a html*/
+  }
+  @media (min-width: 768px) {
+    .navbar-brand {
+      flex-direction: row;/* logo y marca ALINEADOS */
+      margin-bottom: 0;/* logo, marca y menú ALINEADOS */
+    }
+  }
+  .navbar-brand img {/*solo AFECTA a img dentro de navbar-brand*/
+    width: 2em;/*MEDIDA par la marca*/
+  }
+  .navbar-nav {
+    background-color: rgba(0, 0, 0, 0.89);/*COLOR de FONDO del MENU*/
+    padding: 1em;/*mas MARGEN del menú*/
+    border-radius: 0.3em;/*RADIAL para los MARGENES*/
+  }
+  .nav-link {
+    display: inline-block;/* no pasa nada */
+    padding: 0.3;
+    text-decoration: white;
+    color: white;/* COLOR items del menú */
+
+  }
+  .nav-link:hover {
+    background-color: white;/* HOVEO => BOTON BLANCO */
+    color: black;/* HOVEO => LETRA NEGRO */
+    border-radius: 0.5em;/* RADIAL del BOTON */
+  }
+  /* Main */
+  .main {
+    background-color: white;/* FONDO de "Nuestros productos" */
+    padding: 0.3em;/* MARGENES para "Nuestros productos" */
+    margin-top: -2em;/* SUBIR "Nuestros productos" */
+    border-radius: 0.3em;/* RADIAL de FONDO de "N.productos" */
+  }
+  .main-title {
+    text-align: center;/* CENTRADO de "Nuestros productos" */
+    text-transform: uppercase;/* MINUSCULA cambiar a MAYUSCULA */
+  }
+  @media (min-width: 768px) {
+    .tienda {
+      display: flex;/* las carts se ALINEARON */
+      gap: 1em;/* las carts se SEPARAN */
+    }
+  }
+  /* Card */
+  .card {
+    /* width: 300px;   NO por´q trabajaremos con FlexBox */
+    background-color: #A6444C;/* FONDO del TEXTO LOREM */
+    color: white;
+    overflow: hidden;
+    border-radius: 0.5em;
+    margin-bottom: 1em;/* SEPARAR card */
+}
+
+.card-img {
+    width: 100%;
+}
+
+.card-body {
+    padding: 1em;
+}
+
+.card-body h5 {
+    font-size: 1.5rem;
+    margin: 1em 0;
+    font-weight: 500;
+}
+
+.card-body p {
+    font-weight: 200;
+}
+/* Nosotros */
+.nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+    background-color: #302c2d;
+}
+.nosotros-col-img {
+  background-image: url('../assets/images/nosotros.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 21.875em;/* html configuarado en 16, => x21.875 = 350px */
+  width: 100%;/* alFin IMAGEN xq´esta dentro d´ColumnaFlexible */
+  order: 2;
+}
+/* CASCADA => orden, FLEX afecta a las @media de CLASS */
+.nosotros-col-text {
+  order: 1;/* p´q´TEXTO soble la IMAGEN */
+}
+@media (min-width: 576px) {
+  .nosotros-col-img {/* CLASS .nosotros ya tiene FLEX */
+    height: 31.25em;/* yaNO se CORTA img. 500px/16=31.25em */
+  }
+}
+@media (min-width: 768px) {
+  .nosotros {
+    flex-direction: row;/* texto e imagen EN FILA */
+  }
+  .nosotros-col-img {
+    order: 1;/* en la FILA 1° la imagen y 2° el texto */
+    flex: 1 1 0;/* imagen y texto TAMAÑO=s  */
+  }
+  .nosotros-col-text {
+    order: 2;/* FLEXbox facilita el orden */
+    flex: 1 1 0;/* si: 2 1 0 => texto 2tamaño de imagen */
+  }
+}
+.nosotros-body {
+  padding: 1em;/* MARGENES para el TEXTO */
+  text-align: center;
+  color: white;
+}
+.nosotros-body h2 {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.nosotros-body p {
+  font-weight: 200;
+}
+.bg-footer {
+  background-color: #302C2D;
+  color: white;
+}
